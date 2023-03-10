@@ -1,0 +1,14 @@
+.logo_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
