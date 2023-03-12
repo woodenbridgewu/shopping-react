@@ -2,3 +2,10 @@
   border: none;
   /* border-radius: 0; */
 }
+
+@media (max-width: 576px) {
+  .rwdbutton {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}
