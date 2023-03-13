@@ -1,16 +1,13 @@
-import { React, useState } from "react";
+import { React } from "react";
 import LoginForm from "./LoginForm";
 import Profile from "./Profile";
 
-function ProfileRoot() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  function login() {
-    setIsLoggedIn(true);
-  }
+function ProfileRoot(props) {
+  // console.log(props.user);
   return (
     <>
-      {!isLoggedIn && <LoginForm login={login} />}
-      {isLoggedIn && <Profile />}
+      {!props.user && <LoginForm />}
+      {props.user && <Profile />}
     </>
   );
 }

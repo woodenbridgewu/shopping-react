@@ -5,11 +5,12 @@ import Logo from "../components/Logo";
 import Navbar from "../components/Navbar";
 import Options from "../components/Options";
 
-function Root() {
+function Root(props) {
+  console.log(props);
   return (
     <>
       <Container>
-        <Navbar />
+        <Navbar user={props.user} />
         <Logo />
         <Options />
         <Outlet />

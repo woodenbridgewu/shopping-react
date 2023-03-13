@@ -11,6 +11,13 @@ import CartRoot from "./pages/CartRoot";
 import ProfileRoot from "./pages/ProfileRoot";
 import LoginForm from "./pages/LoginForm";
 import Error from "./pages/Error";
+import { auth } from "./components/FirebaseConfig";
+import { useEffect, useState } from "react";
+import {
+  browserSessionPersistence,
+  onAuthStateChanged,
+  setPersistence,
+} from "firebase/auth";
 
 const cartItems = [
   {
@@ -67,10 +74,24 @@ const PRODUCTS = [
 ];
 
 function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        console.log("成功設定持久性");
+      })
+      .catch((error) => {
+        console.log("設定持久性失敗", error);
+      });
+  }, []);
+  onAuthStateChanged(auth, (user) => {
+    setUser(user);
+  });
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root user={user} />,
       errorElement: <Error />,
       children: [
         {
@@ -99,7 +120,7 @@ function App() {
         },
         {
           path: "/profileRoot",
-          element: <ProfileRoot />,
+          element: <ProfileRoot user={user} />,
         },
         {
           path: "/login",
@@ -109,7 +130,7 @@ function App() {
     },
     {
       path: "/cartRoot",
-      element: <CartRoot />,
+      element: <CartRoot user={user} />,
       children: [
         {
           path: "",

@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Options from "../components/Options";
 
-function CartRoot() {
+function CartRoot(props) {
   return (
     <>
       <Container>
-        <Navbar />
+        <Navbar user={props.user} />
         <Options />
         <Outlet />
       </Container>

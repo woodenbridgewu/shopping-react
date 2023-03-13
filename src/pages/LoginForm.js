@@ -24,10 +24,6 @@ function LoginForm(props) {
     // 在這裡處理註冊邏輯
   };
 
-  function login() {
-    return props.login();
-  }
-
   return (
     <form className={styles["login-form"]}>
       <h2 className={styles.h2}>登入</h2>
@@ -70,7 +66,7 @@ function LoginForm(props) {
         </button>
       </div>
       <hr />
-      <SocialLogin login={login} />
+      <SocialLogin />
     </form>
   );
 }
