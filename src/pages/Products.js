@@ -19,9 +19,7 @@ function Products(props) {
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
                 <Card.Text>NT$ {product.price}</Card.Text>
-                <Button variant="primary" className={classes.rwdbutton}>
-                  加入購物車
-                </Button>
+                <Button variant="primary">加入購物車</Button>
               </Card.Body>
             </Card>
           </Col>
