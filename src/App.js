@@ -83,10 +83,10 @@ function App() {
       .catch((error) => {
         console.log("設定持久性失敗", error);
       });
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
   }, []);
-  onAuthStateChanged(auth, (user) => {
-    setUser(user);
-  });
 
   const router = createBrowserRouter([
     {
@@ -120,7 +120,7 @@ function App() {
         },
         {
           path: "/profileRoot",
-          element: <ProfileRoot user={user} />,
+          element: <ProfileRoot user={user} setUser={setUser} />,
         },
         {
           path: "/login",

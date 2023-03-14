@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import Options from "../components/Options";
 
 function Root(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <Container>
