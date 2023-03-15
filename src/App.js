@@ -91,7 +91,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root user={user} />,
+      element: <Root user={user} setUser={setUser} />,
       errorElement: <Error />,
       children: [
         {
@@ -126,15 +126,15 @@ function App() {
           path: "/login",
           element: <LoginForm />,
         },
-      ],
-    },
-    {
-      path: "/cartRoot",
-      element: <CartRoot user={user} />,
-      children: [
         {
-          path: "",
-          element: <Cart items={cartItems} />,
+          path: "/cartRoot",
+          element: <CartRoot />,
+          children: [
+            {
+              path: "",
+              element: <Cart items={cartItems} />,
+            },
+          ],
         },
       ],
     },
