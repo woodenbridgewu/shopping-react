@@ -19,58 +19,13 @@ import {
   setPersistence,
 } from "firebase/auth";
 
-const cartItems = [
-  {
-    id: 1,
-    name: "Nike Air Max 270 React",
-    size: "US 10",
-    price: 129,
-    quantity: 2,
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: 2,
-    name: "Adidas Ultraboost 21",
-    size: "US 9",
-    price: 179,
-    quantity: 1,
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: 3,
-    name: "Puma Calibrate Runner",
-    size: "US 8",
-    price: 89,
-    quantity: 3,
-    image: "https://via.placeholder.com/150",
-  },
-];
-
 const PRODUCTS = [
-  {
-    title: "p1",
-    price: 100,
-  },
-  {
-    title: "p2",
-    price: 200,
-  },
-  {
-    title: "p3",
-    price: 300,
-  },
-  {
-    title: "p4",
-    price: 400,
-  },
-  {
-    title: "p5",
-    price: 500,
-  },
-  {
-    title: "p6",
-    price: 600,
-  },
+  { id: 1, title: "p1", price: 100 },
+  { id: 2, title: "p2", price: 200 },
+  { id: 3, title: "p3", price: 300 },
+  { id: 4, title: "p4", price: 400 },
+  { id: 5, title: "p5", price: 500 },
+  { id: 6, title: "p6", price: 600 },
 ];
 
 function App() {
@@ -132,7 +87,7 @@ function App() {
           children: [
             {
               path: "",
-              element: <Cart items={cartItems} />,
+              element: <Cart />,
             },
           ],
         },
