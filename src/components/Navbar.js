@@ -15,7 +15,7 @@ function Navbar({ user, setUser }) {
         // An error happened.
       });
   }
-  console.log(user);
+  // console.log(user);
   return (
     <>
       <nav>
@@ -23,7 +23,7 @@ function Navbar({ user, setUser }) {
           Normal Design
         </Link>
         <div>
-          <Link to={"/cartRoot"}>
+          <Link to={"/cart"}>
             <img src={require("../images/shopping-cart.png")} alt="" />
           </Link>
           <Link to={"/profileRoot"}>

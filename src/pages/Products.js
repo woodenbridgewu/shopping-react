@@ -7,11 +7,10 @@ import classes from "./Products.module.css";
 import { Link } from "react-router-dom";
 
 function Products(props) {
-  // console.log();
-
-  function showproduct(id) {
-    console.log(`第${id}個商品`);
+  function addToCart(product) {
+    props.addToCart(product);
   }
+
   return (
     <Row>
       {props.dummyProduct?.map((product) => {
@@ -27,7 +26,7 @@ function Products(props) {
                 <Button
                   variant="primary"
                   className={classes.rwdbutton}
-                  onClick={() => showproduct(product.id)}
+                  onClick={() => addToCart(product)}
                 >
                   加入購物車
                 </Button>
