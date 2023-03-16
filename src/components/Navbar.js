@@ -29,7 +29,11 @@ function Navbar({ user, setUser }) {
           <Link to={"/profileRoot"}>
             <img src={require("../images/profile-user.png")} alt="" />
           </Link>
-          {user && <button onClick={logoutHandler}>登出</button>}
+          {user && (
+            <button className={classes.logout_button} onClick={logoutHandler}>
+              登出
+            </button>
+          )}
         </div>
       </nav>
     </>
