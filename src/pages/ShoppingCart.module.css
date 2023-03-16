@@ -97,3 +97,22 @@
     color: #5c5c5c;
   }
 }
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 8px;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+}
+
+.hidden {
+  display: none;
+}
