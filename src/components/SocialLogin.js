@@ -1,6 +1,8 @@
 import { React } from "react";
 import { auth, provider } from "./FirebaseConfig";
 import { signInWithPopup } from "firebase/auth";
+import classes from "./SocialLogin.module.css";
+
 function SocialLogin() {
   function googleLoginHandler(e) {
     e.preventDefault();
@@ -12,9 +14,24 @@ function SocialLogin() {
 
   return (
     <>
-      <button type="submit" onClick={googleLoginHandler}>
+      {/* <button type="submit" onClick={googleLoginHandler}>
         Google 登入
-      </button>
+      </button> */}
+      <div className={classes.container}>
+        {" "}
+        <button className={classes.google_btn} onClick={googleLoginHandler}>
+          <div className={classes.google_icon_wrapper}>
+            <img
+              className={classes.google_icon}
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              alt="google"
+            />
+          </div>
+          <p className={classes.btn_text}>
+            <b>Sign in with Google</b>
+          </p>
+        </button>
+      </div>
     </>
   );
 }
