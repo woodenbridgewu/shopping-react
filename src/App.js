@@ -49,7 +49,11 @@ function App() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
-  console.log(cartItems);
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // console.log(cartItems);
 
   useEffect(() => {
     setPersistence(auth, browserSessionPersistence)
@@ -72,7 +76,7 @@ function App() {
       children: [
         {
           path: "",
-          element: <Home dummyProduct={PRODUCTS} />,
+          element: <Home dummyProduct={PRODUCTS} addToCart={addToCart} />,
         },
         {
           path: "/products",
